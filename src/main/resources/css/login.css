@@ -20,13 +20,15 @@
 }
 
 .buttons{
-    -fx-background-color: #284F52;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 0, 0);
+    -fx-background-color: #0B7E6F;
     -fx-background-radius: 50px;
     -fx-text-fill: white;
+    -fx-cursor: hand;
 }
 
 .buttons:hover{
-    -fx-background-color: #102021;
+    -fx-background-color: #0F423D;
 }
 
 .general-background{

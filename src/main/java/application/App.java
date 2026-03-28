@@ -17,9 +17,8 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        LoginPageController firstPageController = new LoginPageController();
 
-        AnchorPane root = FXMLLoader.load(getClass().getResource(Paths.FIRST_PAGE));
+        AnchorPane root = FXMLLoader.load(getClass().getResource(Paths.MAIN_PAGE));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
