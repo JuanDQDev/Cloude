@@ -1,0 +1,41 @@
+.textfields{
+    -fx-text-alignment: bottom-left;
+
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #000000;
+    -fx-border-width: 0px 0px 1px;
+    -fx-padding: 7px 0px 0px 5px;
+}
+
+.quindio-logo{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 0, 0);
+}
+
+.login-text{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 0, 0);
+}
+
+.textfields:focus-within {
+    -fx-background-color: #F2F2F2;
+}
+
+.buttons{
+    -fx-background-color: #284F52;
+    -fx-background-radius: 50px;
+    -fx-text-fill: white;
+}
+
+.buttons:hover{
+    -fx-background-color: #102021;
+}
+
+.general-background{
+    -fx-background-color: linear-gradient(to top, #C1E1DC 0%, white 30%, #CFD4EA 140%);
+}
+
+.menu-background {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0);
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 50px 0px 0px 50px;
+
+}
