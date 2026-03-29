@@ -56,5 +56,15 @@
             <Font name="Farah Regular" size="42.0" />
          </font>
       </Text>
+      <Text layoutX="8.0" layoutY="476.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="login-text" text="¿No te haz registrado?" wrappingWidth="670.7912921396883">
+         <font>
+            <Font name="Farah Regular" size="28.0" />
+         </font>
+      </Text>
+      <Button layoutX="16.0" layoutY="498.0" mnemonicParsing="false" onAction="#onActionMenuPrincipal" prefHeight="52.0" prefWidth="252.0" styleClass="buttons" stylesheets="@css/login.css" text="Menu Principal">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -1,0 +1,29 @@
+.general-background{
+    -fx-background-color: linear-gradient(to top, #C1E1DC 0%, white 30%, #CFD4EA 140%);
+}
+
+.menu-pane{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0);
+    -fx-background-color: white;
+    -fx-background-radius: 50px;
+}
+
+.login-text{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 0, 0);
+    -fx-text-alignment: center;
+}
+
+.image-stroke {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+}
+
+.button-menu{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0);
+    -fx-background-color: #0B7E6F;
+    -fx-text-fill: white;
+    -fx-background-radius: 50px;
+    -fx-cursor: hand;
+}
+.button-menu:hover{
+    -fx-background-color: #0F423D;
+}

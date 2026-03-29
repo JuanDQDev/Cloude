@@ -26,7 +26,7 @@
                   <Font name="Beirut Regular" size="50.0" />
                </font>
             </Text>
-            <Button layoutX="65.0" layoutY="329.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="288.0" styleClass="button-menu" text="Registrarse">
+            <Button layoutX="65.0" layoutY="329.0" mnemonicParsing="false" onAction="#onActionRegistrarse" prefHeight="43.0" prefWidth="288.0" styleClass="button-menu" text="Registrarse">
                <font>
                   <Font size="24.0" />
                </font></Button>
