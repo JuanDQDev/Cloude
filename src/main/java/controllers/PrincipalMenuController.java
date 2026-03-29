@@ -8,9 +8,14 @@ import java.io.IOException;
 
 public class PrincipalMenuController {
     SceneController sceneController  = new SceneController();
+
     @FXML
     void btnIngresarOnAction(ActionEvent event) throws IOException {
-    sceneController.switchLoginPage(event);
+        sceneController.switchLoginPage(event);
     }
 
+    @FXML
+    void onActionRegistrarse(ActionEvent event) throws IOException {
+        sceneController.switchRegisterPage(event);
+    }
 }
