@@ -1,18 +1,23 @@
 package application;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import org.w3c.dom.Node;
 import utilities.Paths;
-import controllers.LoginPageController;
+import controllers.PrincipalMenuController;
+
+import java.io.IOException;
 
 
 public class App extends Application {
 
     public static void main(String[] args) {
-    launch();
+        launch();
     }
 
     @Override
@@ -22,6 +27,9 @@ public class App extends Application {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+
+
     }
+
 
 }

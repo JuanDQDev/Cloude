@@ -16,12 +16,12 @@
             <String fx:value="menu-pane" />
          </styleClass>
          <children>
-            <ImageView fitHeight="381.0" fitWidth="342.0" layoutX="90.0" layoutY="-68.0" pickOnBounds="true" preserveRatio="true" styleClass="image-stroke">
+            <ImageView fitHeight="381.0" fitWidth="342.0" layoutX="82.0" layoutY="-68.0" pickOnBounds="true" preserveRatio="true" styleClass="image-stroke">
                <image>
                   <Image url="@images/QuindioAventura.png" />
                </image>
             </ImageView>
-            <Text layoutX="79.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="login-text" text="Bienvenido" wrappingWidth="307.66790168275486">
+            <Text layoutX="67.0" layoutY="291.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="login-text" text="Bienvenido!" wrappingWidth="307.66790168275486">
                <font>
                   <Font name="Beirut Regular" size="50.0" />
                </font>
@@ -30,7 +30,7 @@
                <font>
                   <Font size="24.0" />
                </font></Button>
-            <Button layoutX="64.0" layoutY="384.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="288.0" styleClass="button-menu" text="Ingresar">
+            <Button layoutX="64.0" layoutY="384.0" mnemonicParsing="false" onAction="#btnIngresarOnAction" prefHeight="43.0" prefWidth="288.0" styleClass="button-menu" text="Ingresar">
                <font>
                   <Font size="24.0" />
                </font>
