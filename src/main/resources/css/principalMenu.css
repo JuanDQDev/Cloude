@@ -2,6 +2,10 @@
     -fx-background-color: linear-gradient(to top, #C1E1DC 0%, white 30%, #CFD4EA 140%);
 }
 
+.login-text{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 0, 0);
+}
+
 .button-menu{
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0);
     -fx-background-color: #0B7E6F;
