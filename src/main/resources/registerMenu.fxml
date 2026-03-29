@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="695.0" prefWidth="1059.0" styleClass="general-background" stylesheets="@css/registerMenu.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="695.0" prefWidth="1059.0" styleClass="general-background" stylesheets="@css/registerMenu.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RegisterMenuController">
    <children>
       <AnchorPane layoutX="206.0" layoutY="19.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="668.0" styleClass="menu-pane">
          <children>
@@ -62,6 +62,11 @@
                   <Font name="Farah Regular" size="28.0" />
                </font>
             </Text>
+            <Button layoutX="198.0" layoutY="583.0" mnemonicParsing="false" onAction="#onActionVolverMenu" prefHeight="45.0" prefWidth="306.0" styleClass="button-menu" text="Volver al menu principal">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>
