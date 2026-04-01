@@ -4,6 +4,7 @@ import application.App;
 import controllers.SceneController;
 import javafx.geometry.Pos;
 import javafx.util.Duration;
+import model.enums.TipoNotificaciones;
 import org.controlsfx.control.Notifications;
 
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public class RegistroPersona {
             return false;
         }
     }
-    
+
     public static boolean chequeoPosicion(String cedula) {
         for( Persona p : App.personas) {
             if(p.getCedula().equals(cedula.trim())) {
@@ -36,12 +37,18 @@ public class RegistroPersona {
     }
 
 
-    public static void userAlrExitsNoti() {
+    public static void createNotification(TipoNotificaciones tipoNotificacion, String title, String message) {
         Notifications notifications = Notifications.create();
-        notifications.title("Registro");
-        notifications.text("Este usuario ya existe.");
-        notifications.hideAfter(Duration.seconds(1.5));
+        notifications.title(title);
+        notifications.text(message);
+        notifications.hideAfter(Duration.seconds(3));
         notifications.position(Pos.TOP_RIGHT);
-        notifications.showError();
+        if (tipoNotificacion == tipoNotificacion.SUCCESS){
+            notifications.showConfirm();
+        } else if (tipoNotificacion == tipoNotificacion.ERROR){
+            notifications.showError();
+        } else if (tipoNotificacion == tipoNotificacion.WARNING){
+            notifications.showWarning();
+        }
     }
 }
