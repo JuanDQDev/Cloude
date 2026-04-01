@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.RegistroPersona;
+import model.enums.TipoNotificaciones;
 import org.controlsfx.control.Notifications;
 import application.App;
 
@@ -39,16 +40,23 @@ public class RegisterMenuController {
         String usuario = usertxtfield.getText().trim();
         Persona persona = new Persona(usuario, telefono, cedula);
 
-        if (!RegistroPersona.comprobarCedulayTelefono(cedula, telefono) || usuario.isEmpty()) {
-            RegistroPersona.userAlrExitsNoti();
+        if(cedula.isEmpty() ||  telefono.isEmpty() || usuario.isEmpty()){
+            RegistroPersona.createNotification(TipoNotificaciones.WARNING, "Registro", "Debes de llenar todos los campos para registrarse.");
         } else {
-            if (RegistroPersona.chequeoPosicion(cedula)) { // Importamos los metodos de la clase RegistroPersona
-                RegistroPersona.userAlrExitsNoti();
+            if (!RegistroPersona.comprobarCedulayTelefono(cedula, telefono)) {
+                RegistroPersona.createNotification(TipoNotificaciones.WARNING, "Registro", "No se debe de usar texto registrando tu cedula y/o telefono.");
             } else {
-                personas.add(persona);
-                sceneController.switchPrincipalPage(event);
+                if (RegistroPersona.chequeoPosicion(cedula)) { // Importamos los metodos de la clase RegistroPersona
+                    RegistroPersona.createNotification(TipoNotificaciones.ERROR, "Registro", "Ya hay un usuario con esa cedula registrada.");
+                } else {
+                    personas.add(persona);
+                    sceneController.switchPrincipalPage(event);
+                    RegistroPersona.createNotification(TipoNotificaciones.SUCCESS, "Registro", "Registrado exitosamente.");
+                }
             }
         }
+
+
     }
 
     @FXML
