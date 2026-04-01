@@ -27,7 +27,7 @@
                   <Font size="22.0" />
                </font>
             </Text>
-            <TextField fx:id="usertxtfield1" layoutX="28.0" layoutY="418.0" prefHeight="29.0" prefWidth="298.0" promptText="Ingrese su telefono" scaleShape="false" styleClass="textfields" stylesheets="@css/login.css">
+            <TextField fx:id="telefonotxtfield" layoutX="28.0" layoutY="418.0" prefHeight="29.0" prefWidth="298.0" promptText="Ingrese su telefono" scaleShape="false" styleClass="textfields" stylesheets="@css/login.css">
                <font>
                   <Font size="26.0" />
                </font>
@@ -37,7 +37,7 @@
                   <Font size="22.0" />
                </font>
             </Text>
-            <TextField fx:id="usertxtfield11" layoutX="28.0" layoutY="500.0" prefHeight="29.0" prefWidth="298.0" promptText="Ingrese su cedula" scaleShape="false" styleClass="textfields" stylesheets="@css/login.css">
+            <TextField fx:id="cedulatxtfield" layoutX="28.0" layoutY="500.0" prefHeight="29.0" prefWidth="298.0" promptText="Ingrese su cedula" scaleShape="false" styleClass="textfields" stylesheets="@css/login.css">
                <font>
                   <Font size="26.0" />
                </font>
@@ -47,7 +47,7 @@
                   <Font size="22.0" />
                </font>
             </Text>
-            <Button layoutX="392.0" layoutY="454.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="230.0" styleClass="button-menu" text="Registrarse">
+            <Button layoutX="392.0" layoutY="454.0" mnemonicParsing="false" onAction="#onActionRegistrarse" prefHeight="45.0" prefWidth="230.0" styleClass="button-menu" text="Registrarse">
                <font>
                   <Font size="24.0" />
                </font>
