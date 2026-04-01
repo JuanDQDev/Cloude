@@ -13,6 +13,8 @@ import javax.management.Notification;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import model.RegistroPersona;
 import org.controlsfx.control.Notifications;
 import application.App;
 
@@ -37,35 +39,16 @@ public class RegisterMenuController {
         String usuario = usertxtfield.getText().trim();
         Persona persona = new Persona(usuario, telefono, cedula);
 
-        if (chequeoPosicion(cedula)) {
-            userAlrExitsNoti();
+        if (!RegistroPersona.comprobarCedulayTelefono(cedula, telefono) || usuario.isEmpty()) {
+            RegistroPersona.userAlrExitsNoti();
         } else {
-            personas.add(persona);
-            sceneController.switchPrincipalPage(event);
-        }
-        if (cedulatxtfield.getText().equals("Posicion")) {
-            personas.get(0);
-           // userAlrExitsNoti(event);
-        }
-        System.out.println(personas);
-    }
-
-    void userAlrExitsNoti() {
-        Notifications notifications = Notifications.create();
-        notifications.title("Registro");
-        notifications.text("Este usuario ya existe.");
-        notifications.hideAfter(Duration.seconds(1.5));
-        notifications.position(Pos.TOP_RIGHT);
-        notifications.showError();
-    }
-
-    boolean chequeoPosicion(String cedula) {
-        for( Persona p : personas) {
-            if(p.getCedula().equals(cedula.trim())) {
-                return true;
+            if (RegistroPersona.chequeoPosicion(cedula)) { // Importamos los metodos de la clase RegistroPersona
+                RegistroPersona.userAlrExitsNoti();
+            } else {
+                personas.add(persona);
+                sceneController.switchPrincipalPage(event);
             }
         }
-        return false;
     }
 
     @FXML
