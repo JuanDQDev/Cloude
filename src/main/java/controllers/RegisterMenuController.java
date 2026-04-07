@@ -34,28 +34,28 @@ public class RegisterMenuController {
     private TextField usertxtfield;
 
     @FXML
+    private TextField estaturatxtfield;
+
+    @FXML
     void onActionRegistrarse(ActionEvent event) throws IOException {
         String cedula = cedulatxtfield.getText().trim(); // Usado para remover espacios al inicio y fin
-        String telefono = telefonotxtfield.getText().trim();
+        String edad = telefonotxtfield.getText().trim();
         String usuario = usertxtfield.getText().trim();
-        Persona persona = new Persona(usuario, telefono, cedula);
+        String estatura = estaturatxtfield.getText().trim();
+        Persona persona = new Persona(usuario, edad, cedula, estatura);
 
-        if(cedula.isEmpty() ||  telefono.isEmpty() || usuario.isEmpty()){
-            RegistroPersona.createNotification(TipoNotificaciones.WARNING, "Registro", "Debes de llenar todos los campos para registrarse.");
-        } else {
-            if (!RegistroPersona.comprobarCedulayTelefono(cedula, telefono)) {
-                RegistroPersona.createNotification(TipoNotificaciones.WARNING, "Registro", "No se debe de usar texto registrando tu cedula y/o telefono.");
+            if (cedula.isEmpty() || edad.isEmpty() || usuario.isEmpty() || estatura.isEmpty()) {
+                RegistroPersona.createNotification(TipoNotificaciones.WARNING, "Registro", "Debes de llenar todos los campos para registrarse.");
+            } else if (!RegistroPersona.comprobarCedulayTelefono(cedula, edad, estatura)) {
+                boolean doubleEstatura = RegistroPersona.comprobarEstatura(estatura);
+            } else if (RegistroPersona.chequeoPosicion(cedula)) { // Importamos los metodos de la clase RegistroPersona
+                RegistroPersona.createNotification(TipoNotificaciones.ERROR, "Registro", "Ya hay un usuario con esa cedula registrada.");
             } else {
-                if (RegistroPersona.chequeoPosicion(cedula)) { // Importamos los metodos de la clase RegistroPersona
-                    RegistroPersona.createNotification(TipoNotificaciones.ERROR, "Registro", "Ya hay un usuario con esa cedula registrada.");
-                } else {
-                    personas.add(persona);
-                    sceneController.switchPrincipalPage(event);
-                    RegistroPersona.createNotification(TipoNotificaciones.SUCCESS, "Registro", "Registrado exitosamente.");
-                }
+                personas.add(persona);
+                sceneController.switchPrincipalPage(event);
+                RegistroPersona.createNotification(TipoNotificaciones.SUCCESS, "Registro", "Registrado exitosamente.");
+                System.out.println(personas);
             }
-        }
-
 
     }
 
