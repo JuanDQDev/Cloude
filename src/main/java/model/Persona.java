@@ -5,13 +5,16 @@ import controllers.RegisterMenuController;
 public class Persona {
 
     private String nombre;
-    private String telefono;
+    private String edad;
     private String cedula;
+    private String estatura;
+    private double saldoVirtual;
 
-    public Persona(String nombre, String telefono, String cedula) {
+    public Persona(String nombre, String edad, String cedula, String estatura) {
         this.nombre = nombre;
-        this.telefono = telefono;
+        this.edad = edad;
         this.cedula = cedula;
+        this.estatura = estatura;
     }
 
     public String getNombre() {
@@ -22,12 +25,12 @@ public class Persona {
         this.nombre = nombre;
     }
 
-    public String getTelefono() {
-        return telefono;
+    public String getEdad() {
+        return edad;
     }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public void setEdad(String telefono) {
+        this.edad = telefono;
     }
 
     public String getCedula() {
@@ -38,8 +41,24 @@ public class Persona {
         this.cedula = cedula;
     }
 
+    public String getEstatura() {
+        return estatura;
+    }
+
+    public void setEstatura(String estatura) {
+        this.estatura = estatura;
+    }
+
+    public double getSaldoVirtual() {
+        return saldoVirtual;
+    }
+
+    public void setSaldoVirtual(double saldoVirtual) {
+        this.saldoVirtual = saldoVirtual;
+    }
+
     @Override
     public String toString() {
-        return nombre + " " + telefono + " " + cedula + " | ";
+        return nombre + " " + edad + " " + cedula + " | " + estatura + " | ";
     }
 }

@@ -13,16 +13,26 @@ public class RegistroPersona {
 
     SceneController sceneController  = new SceneController();
 
-    public static boolean comprobarCedulayTelefono(String cedula, String telefono) {
+    public static boolean comprobarCedulayTelefono(String cedula, String edad, String estatura) {
 
-        if(cedula.isEmpty() && telefono.isEmpty()) {
+        if(cedula.isEmpty() && edad.isEmpty() && estatura.isEmpty()) {
             return false;
         }
         try{ // Metodo usado para probar una accion y si esta da un error (Excepcion) la tomara y realizara una accion que le digamos
             Integer.parseInt(cedula);
-            Integer.parseInt(telefono);
+            Integer.parseInt(edad);
+            Integer.parseInt(estatura);
             return true;
         } catch (NumberFormatException e){ // El que toma el error
+            return false;
+        }
+    }
+
+    public static boolean comprobarEstatura(String estatura){
+        try{
+            Double.parseDouble(estatura);
+            return true;
+        } catch(NumberFormatException e){
             return false;
         }
     }
