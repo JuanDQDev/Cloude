@@ -22,8 +22,6 @@ import application.App;
 public class RegisterMenuController {
 
     SceneController sceneController  = new SceneController();
-    ArrayList<Persona> personas = App.personas;
-
     @FXML
     private TextField cedulatxtfield;
 
@@ -39,24 +37,12 @@ public class RegisterMenuController {
     @FXML
     void onActionRegistrarse(ActionEvent event) throws IOException {
         String cedula = cedulatxtfield.getText().trim(); // Usado para remover espacios al inicio y fin
-        String edad = telefonotxtfield.getText().trim();
+        String telefono = telefonotxtfield.getText().trim();
         String usuario = usertxtfield.getText().trim();
         String estatura = estaturatxtfield.getText().trim();
-        Persona persona = new Persona(usuario, edad, cedula, estatura);
 
-            if (cedula.isEmpty() || edad.isEmpty() || usuario.isEmpty() || estatura.isEmpty()) {
-                RegistroPersona.createNotification(TipoNotificaciones.WARNING, "Registro", "Debes de llenar todos los campos para registrarse.");
-            } else if (!RegistroPersona.comprobarCedulayTelefono(cedula, edad, estatura)) {
-                boolean doubleEstatura = RegistroPersona.comprobarEstatura(estatura);
-            } else if (RegistroPersona.chequeoPosicion(cedula)) { // Importamos los metodos de la clase RegistroPersona
-                RegistroPersona.createNotification(TipoNotificaciones.ERROR, "Registro", "Ya hay un usuario con esa cedula registrada.");
-            } else {
-                personas.add(persona);
-                sceneController.switchPrincipalPage(event);
-                RegistroPersona.createNotification(TipoNotificaciones.SUCCESS, "Registro", "Registrado exitosamente.");
-                System.out.println(personas);
-            }
-
+        RegistroPersona registroPersona = new RegistroPersona();
+        registroPersona.registrarPersona(usuario,telefono,cedula,estatura,event);
     }
 
     @FXML
