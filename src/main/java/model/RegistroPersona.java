@@ -8,6 +8,7 @@ import model.enums.TipoNotificaciones;
 import org.controlsfx.control.Notifications;
 
 import javafx.event.ActionEvent;
+import utilities.Paths;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -33,7 +34,7 @@ public class RegistroPersona {
             createNotification(TipoNotificaciones.ERROR, "Registro", "Ya hay un usuario con esa cedula registrada.");
         } else {
             personas.add(persona);
-            sceneController.switchPrincipalPage(event);
+            sceneController.switchBetwenPages(event, Paths.MAIN_PAGE);
             createNotification(TipoNotificaciones.SUCCESS, "Registro", "Registrado exitosamente.");
             System.out.println(personas);
         }
