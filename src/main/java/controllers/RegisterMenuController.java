@@ -11,6 +11,7 @@ import model.Persona;
 
 import javax.management.Notification;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +19,7 @@ import model.RegistroPersona;
 import model.enums.TipoNotificaciones;
 import org.controlsfx.control.Notifications;
 import application.App;
+import utilities.Paths;
 
 public class RegisterMenuController {
 
@@ -47,7 +49,7 @@ public class RegisterMenuController {
 
     @FXML
     void onActionVolverMenu(ActionEvent event) throws IOException {
-        sceneController.switchPrincipalPage(event);
+        sceneController.switchBetwenPages(event, Paths.MAIN_PAGE);
     }
 
 

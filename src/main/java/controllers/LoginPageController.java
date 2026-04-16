@@ -4,6 +4,7 @@ package controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import utilities.Paths;
 
 import java.io.IOException;
 
@@ -19,7 +20,7 @@ public class LoginPageController {
 
     @FXML
     void onActionMenuPrincipal(ActionEvent event) throws IOException {
-        sceneController.switchPrincipalPage(event);
+        sceneController.switchBetwenPages(event, Paths.MAIN_PAGE);
     }
 
 
