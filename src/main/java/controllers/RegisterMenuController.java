@@ -1,24 +1,12 @@
 package controllers;
 
-import javafx.animation.Animation;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.geometry.Pos;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.util.Duration;
-import model.Persona;
 
-import javax.management.Notification;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.List;
 
-import model.RegistroPersona;
-import model.enums.TipoNotificaciones;
-import org.controlsfx.control.Notifications;
-import application.App;
+import model.ParqueAtracciones;
 import utilities.Paths;
 
 public class RegisterMenuController {
@@ -43,8 +31,8 @@ public class RegisterMenuController {
         String usuario = usertxtfield.getText().trim();
         String estatura = estaturatxtfield.getText().trim();
 
-        RegistroPersona registroPersona = new RegistroPersona();
-        registroPersona.registrarPersona(usuario,telefono,cedula,estatura,event);
+        ParqueAtracciones metodoRegistro = new ParqueAtracciones();
+        metodoRegistro.registrarVisitante(usuario,telefono,cedula,estatura,event);
     }
 
     @FXML

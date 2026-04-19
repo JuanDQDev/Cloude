@@ -8,7 +8,6 @@ public class Persona {
     private String edad;
     private String cedula;
     private String estatura;
-    private double saldoVirtual;
 
     public Persona(String nombre, String edad, String cedula, String estatura) {
         this.nombre = nombre;
@@ -49,16 +48,9 @@ public class Persona {
         this.estatura = estatura;
     }
 
-    public double getSaldoVirtual() {
-        return saldoVirtual;
-    }
-
-    public void setSaldoVirtual(double saldoVirtual) {
-        this.saldoVirtual = saldoVirtual;
-    }
 
     @Override
     public String toString() {
-        return nombre + " " + edad + " " + cedula + " | " + estatura + " | ";
+        return nombre + " " + edad + " " + cedula + " " + estatura + " | ";
     }
 }

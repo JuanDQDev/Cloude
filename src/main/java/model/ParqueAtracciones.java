@@ -13,14 +13,14 @@ import utilities.Paths;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class RegistroPersona {
+public class ParqueAtracciones {
 
      SceneController sceneController  = new SceneController();
-     ArrayList<Persona> personas = App.personas;
+     ArrayList<Visitante> visitantes = App.visitantes;
 
 
-    public void registrarPersona(String usuario, String telefono, String cedula, String estatura, ActionEvent event) throws IOException {
-        Persona persona = new Persona(usuario, telefono, cedula, estatura);
+    public void registrarVisitante(String usuario, String telefono, String cedula, String estatura, ActionEvent event) throws IOException {
+        Visitante visitante = new Visitante(usuario, telefono, cedula, estatura);
 
         if (cedula.isEmpty() || telefono.isEmpty() || usuario.isEmpty() || estatura.isEmpty()) {
             createNotification(TipoNotificaciones.WARNING, "Registro", "Todos los campos deben de estar llenos");
@@ -33,16 +33,16 @@ public class RegistroPersona {
         } else if (chequeoPosicion(cedula)) {
             createNotification(TipoNotificaciones.ERROR, "Registro", "Ya hay un usuario con esa cedula registrada.");
         } else {
-            personas.add(persona);
+            visitantes.add(visitante);
             sceneController.switchBetwenPages(event, Paths.MAIN_PAGE);
             createNotification(TipoNotificaciones.SUCCESS, "Registro", "Registrado exitosamente.");
-            System.out.println(personas);
+            System.out.println(visitantes);
         }
 
     }
 
     public static boolean comprobarNombre (String nombre) {
-        if (nombre.isEmpty() || nombre.isBlank()) {
+        if (nombre.isEmpty()) {
             if(nombre.length()<3) {
                 return false;
             }
@@ -74,7 +74,7 @@ public class RegistroPersona {
     }
 
     public static boolean chequeoPosicion(String cedula) {
-        for( Persona p : App.personas) {
+        for( Persona p : App.visitantes) {
             if(p.getCedula().equals(cedula.trim())) {
                 return true;
             }
