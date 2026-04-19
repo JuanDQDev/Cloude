@@ -2,19 +2,15 @@ package model;
 
 import controllers.RegisterMenuController;
 
-public class Persona {
+public abstract class Persona {
 
-    private String nombre;
-    private String edad;
-    private String cedula;
-    private String estatura;
-    private double saldoVirtual;
+    protected String nombre;
+    protected String identificacion;
 
-    public Persona(String nombre, String edad, String cedula, String estatura) {
+
+    public Persona(String nombre, String identificacion) {
         this.nombre = nombre;
-        this.edad = edad;
-        this.cedula = cedula;
-        this.estatura = estatura;
+        this.identificacion = identificacion;
     }
 
     public String getNombre() {
@@ -25,40 +21,19 @@ public class Persona {
         this.nombre = nombre;
     }
 
-    public String getEdad() {
-        return edad;
+    public String getIdentificacion() {
+        return identificacion;
     }
 
-    public void setEdad(String telefono) {
-        this.edad = telefono;
-    }
-
-    public String getCedula() {
-        return cedula;
-    }
-
-    public void setCedula(String cedula) {
-        this.cedula = cedula;
-    }
-
-    public String getEstatura() {
-        return estatura;
-    }
-
-    public void setEstatura(String estatura) {
-        this.estatura = estatura;
-    }
-
-    public double getSaldoVirtual() {
-        return saldoVirtual;
-    }
-
-    public void setSaldoVirtual(double saldoVirtual) {
-        this.saldoVirtual = saldoVirtual;
+    public void setIdentificacion(String identificacion) {
+        this.identificacion = identificacion;
     }
 
     @Override
     public String toString() {
-        return nombre + " " + edad + " " + cedula + " | " + estatura + " | ";
+        return "Persona{" +
+                "nombre='" + nombre + '\'' +
+                ", identificacion='" + identificacion + '\'' +
+                '}';
     }
 }
