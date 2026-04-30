@@ -31,16 +31,15 @@ public class RegisterMenuController {
         String usuario = usertxtfield.getText().trim();
         String estatura = estaturatxtfield.getText().trim();
 
-        ParqueAtracciones metodoRegistro = new ParqueAtracciones();
-        metodoRegistro.registrarVisitante(usuario,telefono,cedula,estatura,event);
+        ParqueAtracciones parqueAtracciones = new ParqueAtracciones();
+        parqueAtracciones.registrarVisitante(usuario,telefono,cedula,estatura,event);
+
     }
 
     @FXML
     void onActionVolverMenu(ActionEvent event) throws IOException {
         sceneController.switchBetwenPages(event, Paths.MAIN_PAGE);
     }
-
-
-    }
+}
 
 

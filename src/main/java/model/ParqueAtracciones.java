@@ -1,11 +1,16 @@
 package model;
 
 import application.App;
+import controllers.MainMenuController;
+import controllers.RegisterMenuController;
 import controllers.SceneController;
 import javafx.geometry.Pos;
 import javafx.util.Duration;
 import model.enums.TipoNotificaciones;
 import org.controlsfx.control.Notifications;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
 
 import javafx.event.ActionEvent;
 import utilities.Paths;
@@ -16,6 +21,7 @@ import java.util.ArrayList;
 public class ParqueAtracciones {
 
      SceneController sceneController  = new SceneController();
+    // MainMenuController mainMenuController = new MainMenuController();
      ArrayList<Visitante> visitantes = App.visitantes;
 
 
@@ -41,8 +47,29 @@ public class ParqueAtracciones {
 
     }
 
+    public void loginVisitante(String usuario, String cedula, ActionEvent event) throws IOException {
+        if(usuario.isEmpty() || cedula.isEmpty()) {
+            createNotification(TipoNotificaciones.ERROR, "Inicio Sesión", "Todos los campos deben de estar llenos");
+        } else if (!comprobarNombre(usuario)) {
+            createNotification(TipoNotificaciones.WARNING, "Inicio Sesión", "Debes usar solo texto en el nombre.");
+        } else if (!comprobarCedulayTelefono(cedula, cedula)) {
+            createNotification(TipoNotificaciones.WARNING, "Inicio Sesión", "Debes usar numeros enteros en la cedula y telefono.");
+        } else {
+            for(Visitante visitante : visitantes) {
+                if(visitante.getCedula().equals(cedula) && visitante.getNombre().equals(usuario)) {
+                    sceneController.switchBetwenPages(event, Paths.MAIN_MENU);
+                    createNotification(TipoNotificaciones.SUCCESS, "Inicion sesión", "Login exitoso.");
+                } else {
+                    createNotification(TipoNotificaciones.WARNING, "Inicio Sesión", "El usuario y la contraseña no coinciden");
+                }
+            }
+        }
+    }
+
     public static boolean comprobarNombre (String nombre) {
         if (nombre.isEmpty()) {
+            return false;
+        } else {
             if(nombre.length()<3) {
                 return false;
             }
@@ -64,11 +91,11 @@ public class ParqueAtracciones {
         }
     }
 
-    public static boolean comprobarEstatura(String estatura){
-        try{
+    public static boolean comprobarEstatura(String estatura) {
+        try {
             Double.parseDouble(estatura);
             return true;
-        } catch(NumberFormatException e){
+        } catch (NumberFormatException e) {
             return false;
         }
     }
