@@ -1,0 +1,41 @@
+.general-background{
+    -fx-background-color: #CFD4EA;
+}
+
+.button-color{
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #4A4949;
+    -fx-fill: #4A4949;
+    -fx-display: flex;
+    transition: 0.3s;
+}
+
+.button-color:hover{
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+    -fx-translate-Y: -5px;
+    -fx-fill: white;
+    -fx-background-color: #83D6C9;
+    -fx-text-fill: white;
+}
+
+.glyphicon{
+    -fx-fill: #4A4949;
+    transition: 0.3s;
+}
+
+.button-color:hover .glyphicon{
+    -fx-fill: white;
+    transition: 0.3s;
+}
+
+.border-pane{
+    -fx-background-color: #FFFFFF;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);
+    -fx-background-radius: 0px 20px 20px 0px;
+}
+
+.perfil-color{
+    -fx-background-color: #83D6C9;
+    -fx-background-radius: 20px;
+}

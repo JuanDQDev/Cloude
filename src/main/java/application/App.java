@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import model.Persona;
+import model.Visitante;
 import org.w3c.dom.Node;
 import utilities.Paths;
 import controllers.PrincipalMenuController;
@@ -19,7 +20,7 @@ import controllers.RegisterMenuController;
 
 public class App extends Application {
 
-    public static ArrayList<Persona> personas = new ArrayList<>();
+    public static ArrayList<Visitante> visitantes = new ArrayList<>();
 
     public static void main(String[] args) {
         launch();
@@ -32,6 +33,12 @@ public class App extends Application {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+
+        Visitante persona = new Visitante("Juan Quitian", "1", "1", "1");
+        Visitante persona2 = new Visitante("oscar villegas", "1", "2", "1");
+        visitantes.add(persona);
+        visitantes.add(persona2);
+
 
     }
 
