@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+
+<AnchorPane prefWidth="900" prefHeight="500"
+            fx:controller="mapaParque.controller.MapaController"
+            stylesheets="@css/mapaParque.css"
+            xmlns:fx="http://javafx.com/fxml">
+
+    <!-- MAPA -->
+    <ImageView fx:id="mapaImg"
+               fitWidth="900"
+               preserveRatio="true" />
+
+    <!-- BOTONES -->
+    <Button text="1" layoutX="300" layoutY="120"
+            onAction="#seleccionarAtraccion"
+            styleClass="marcador m1"/>
+
+    <Button text="2" layoutX="200" layoutY="220"
+            onAction="#seleccionarAtraccion"
+            styleClass="marcador m2"/>
+
+    <Button text="3" layoutX="600" layoutY="180"
+            onAction="#seleccionarAtraccion"
+            styleClass="marcador m3"/>
+
+    <Button text="4" layoutX="250" layoutY="350"
+            onAction="#seleccionarAtraccion"
+            styleClass="marcador m4"/>
+
+    <Button text="5" layoutX="650" layoutY="380"
+            onAction="#seleccionarAtraccion"
+            styleClass="marcador m5"/>
+
+    <!-- PANEL INFO -->
+    <AnchorPane fx:id="panelInfo"
+                layoutX="600" layoutY="50"
+                prefWidth="250" prefHeight="200"
+                styleClass="panel-info">
+
+        <Label fx:id="titulo" layoutX="15" layoutY="15"/>
+        <Label fx:id="descripcion" layoutX="15" layoutY="50" wrapText="true"/>
+
+        <Button text="Cerrar" layoutX="150" layoutY="150"
+                onAction="#cerrarPanel"/>
+
+    </AnchorPane>
+
+</AnchorPane>

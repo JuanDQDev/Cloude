@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500" prefWidth="847.0" stylesheets="@css/mapaParque.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="mapaParque.controller.MapaController">
+
+    <!-- MAPA -->
+    <ImageView fx:id="mapaImg" fitWidth="900" preserveRatio="true" />
+   <ImageView fitHeight="593.0" fitWidth="806.0" layoutX="-9.0" layoutY="-1.0">
+      <image>
+         <Image url="@../../../../../Downloads/ChatGPT%20Image%2030%20abr%202026,%2005_31_11%20p.m..png" />
+      </image>
+   </ImageView>
+
+    <!-- BOTONES -->
+    <Button layoutX="249.0" layoutY="66.0" onAction="#seleccionarAtraccion" prefHeight="38.0" prefWidth="36.0" stylesheets="@css/mapaParque.css" text="1">
+      <styleClass>
+         <String fx:value="button-parque" />
+         <String fx:value="marcador" />
+         <String fx:value="m1" />
+      </styleClass>
+      <font>
+         <Font name="System Italic" size="12.0" />
+      </font></Button>
+
+    <Button layoutX="525.0" layoutY="305.0" onAction="#seleccionarAtraccion" prefHeight="31.0" prefWidth="36.0" stylesheets="@css/mapaParque2.css" text="5">
+      <styleClass>
+         <String fx:value="m5" />
+         <String fx:value="button2-parque" />
+         <String fx:value="marcador" />
+      </styleClass></Button>
+
+    <Button layoutX="490.0" layoutY="98.0" onAction="#seleccionarAtraccion" prefHeight="38.0" prefWidth="36.0" stylesheets="@css/mapaParque.css" text="3" textFill="WHITE">
+      <styleClass>
+         <String fx:value="button-parque" />
+         <String fx:value="m3" />
+         <String fx:value="marcador" />
+      </styleClass>
+      <font>
+         <Font name="System Bold Italic" size="12.0" />
+      </font></Button>
+
+    <Button layoutX="95.0" layoutY="305.0" onAction="#seleccionarAtraccion" prefHeight="38.0" prefWidth="45.0" text="4">
+      <styleClass>
+         <String fx:value="button1-parque" />
+         <String fx:value="marcador" />
+         <String fx:value="m4" />
+      </styleClass>
+      <stylesheets>
+         <URL value="@css/mapaParque2.css" />
+         <URL value="@css/mapaParque.css" />
+      </stylesheets></Button>
+
+    <Button layoutX="170.0" layoutY="155.0" onAction="#seleccionarAtraccion" prefHeight="38.0" prefWidth="36.0" stylesheets="@css/mapaParque.css" text="2">
+      <styleClass>
+         <String fx:value="marcador m5" />
+         <String fx:value="button3-parque" />
+         <String fx:value="m2" />
+         <String fx:value="marcador" />
+      </styleClass></Button>
+
+</AnchorPane>

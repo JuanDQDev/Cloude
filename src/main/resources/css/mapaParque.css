@@ -1,0 +1,47 @@
+.marcador {
+    -fx-pref-width: 45px;
+    -fx-pref-height: 45px;
+    -fx-min-width: 45px;
+    -fx-min-height: 45px;
+    -fx-max-width: 45px;
+    -fx-max-height: 45px;
+
+    -fx-background-radius: 100%;
+    -fx-border-radius: 100%;
+    -fx-padding: 0;
+
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    /* 🔥 BORDE BLANCO */
+    -fx-border-color: white;
+    -fx-border-width: 3;
+
+    /* sombra */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 8, 0.3, 0, 2);
+
+
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 8, 0.3, 0, 2);
+}
+
+/* COLORES */
+.m1 { -fx-background-color: #8e0000; }
+.m2 { -fx-background-color: #22699e; }
+.m3 { -fx-background-color: #f1c40f; }
+.m4 { -fx-background-color: #5d6532; }
+.m5 { -fx-background-color: #c60909; }
+
+/* ACTIVO */
+.activo {
+    -fx-scale-x: 1.2;
+    -fx-scale-y: 1.2;
+    -fx-border-color: white;
+    -fx-border-width: 3;
+}
+
+/* PANEL */
+.panel-info {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-padding: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 15, 0.3, 0, 5);
+}
