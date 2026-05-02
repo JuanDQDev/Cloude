@@ -7,6 +7,7 @@ public class ParqueAtracciones {
     private String nit;
     private String nombre;
     private String direccion;
+    private int capacidadMaxima;
 
     //relaciones
     private ArrayList<Atraccion> listAtracciones;
@@ -18,11 +19,6 @@ public class ParqueAtracciones {
         this.direccion = direccion;
         listAtracciones = new ArrayList<>();
         listPersonas = new ArrayList<>();
-    }
-
-    public boolean registrarPersona(Persona persona){
-        if
-        return false;
     }
 
     public String getNombre() {

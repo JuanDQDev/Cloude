@@ -1,5 +1,7 @@
 package model;
 
+import model.enums.TipoEntrada;
+
 import java.util.ArrayList;
 
 public class Atraccion {
@@ -14,9 +16,9 @@ public class Atraccion {
 
     //relaciones
     private ArrayList<Operador> listOperadores;
-    private ArrayList<Visitante> listVisitantes;
+    private ColaVirtual theColaVirtual;
 
-    public Atraccion(String id, String nombre, int capacidadCiclo, double alturaMinima, int edadMinima, int tiempoEspera, double costoAdicional, ArrayList<Operador> listOperadores, ArrayList<Visitante> listVisitantes) {
+    public Atraccion(String id, String nombre, int capacidadCiclo, double alturaMinima, int edadMinima, int tiempoEspera, double costoAdicional, ArrayList<Operador> listOperadores, ColaVirtual theColaVirtual) {
         this.id = id;
         this.nombre = nombre;
         this.capacidadCiclo = capacidadCiclo;
@@ -25,7 +27,25 @@ public class Atraccion {
         this.tiempoEspera = tiempoEspera;
         this.costoAdicional = costoAdicional;
         listOperadores = new ArrayList<>();
-        listVisitantes = new ArrayList<>();
+        this.theColaVirtual=theColaVirtual;
+    }
+
+    public boolean validarEdadMinima(Visitante visitante){
+        boolean bandera=true;
+
+            if(visitante.getEdad()<edadMinima){
+                bandera=false;
+            }
+            return bandera;
+    }
+
+    public boolean validarEstaturaMinima(Visitante visitante){
+        boolean bandera=true;
+
+        if(visitante.getEstatura()<alturaMinima){
+            bandera=false;
+        }
+        return bandera;
     }
 
     public String getId() {
@@ -92,12 +112,12 @@ public class Atraccion {
         this.costoAdicional = costoAdicional;
     }
 
-    public ArrayList<Visitante> getListVisitantes() {
-        return listVisitantes;
+    public ColaVirtual getTheColaVirtual() {
+        return theColaVirtual;
     }
 
-    public void setListVisitantes(ArrayList<Visitante> listVisitantes) {
-        this.listVisitantes = listVisitantes;
+    public void setTheColaVirtual(ColaVirtual theColaVirtual) {
+        this.theColaVirtual = theColaVirtual;
     }
 
     @Override

@@ -31,4 +31,12 @@ public class Administrador extends Persona{
     public void setSueldo(double sueldo) {
         this.sueldo = sueldo;
     }
+
+    public ReporteFinal getTheReporte() {
+        return theReporte;
+    }
+
+    public void setTheReporte(ReporteFinal theReporte) {
+        this.theReporte = theReporte;
+    }
 }

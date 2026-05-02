@@ -1,5 +1,9 @@
 package model;
 
+import model.enums.TipoEntrada;
+
+import java.util.ArrayList;
+
 public class Visitante extends Persona{
 
     private int edad;
@@ -7,12 +11,25 @@ public class Visitante extends Persona{
     private double saldoVirtual;
     private String foto;
 
+    private ArrayList<Atraccion> atraccionesFavoritas;
+    private TipoEntrada entrada;
+
     public Visitante(String nombre, String identificacion, int edad, double estatura, double saldoVirtual, String foto) {
         super(nombre, identificacion);
         this.edad = edad;
         this.estatura = estatura;
         this.saldoVirtual = saldoVirtual;
         this.foto = foto;
+    }
+
+    public Visitante(String nombre, String identificacion, int edad, double estatura, String foto, double saldoVirtual, ArrayList<Atraccion> atraccionesFavoritas, TipoEntrada entrada) {
+        super(nombre, identificacion);
+        this.edad = edad;
+        this.estatura = estatura;
+        this.foto = foto;
+        this.saldoVirtual = saldoVirtual;
+        this.atraccionesFavoritas = atraccionesFavoritas;
+        this.entrada = entrada;
     }
 
     public int getEdad() {
@@ -45,6 +62,14 @@ public class Visitante extends Persona{
 
     public void setFoto(String foto) {
         this.foto = foto;
+    }
+
+    public TipoEntrada getEntrada() {
+        return entrada;
+    }
+
+    public void setEntrada(TipoEntrada entrada) {
+        this.entrada = entrada;
     }
 
     @Override
