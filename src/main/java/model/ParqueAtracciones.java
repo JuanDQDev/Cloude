@@ -12,6 +12,16 @@ public class ParqueAtracciones {
     //relaciones
     private ArrayList<Atraccion> listAtracciones;
     private ArrayList<Persona> listPersonas;
+    private ArrayList<Visitante> listVisitante;
+
+    public ParqueAtracciones(String nit, String nombre, String direccion, int capacidadMaxima, ArrayList<Atraccion> listAtracciones, ArrayList<Visitante> listVisitante) {
+        this.nit = nit;
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.capacidadMaxima = capacidadMaxima;
+        this.listAtracciones = listAtracciones;
+        this.listVisitante = listVisitante;
+    }
 
     public ParqueAtracciones(String nit, String nombre, String direccion, ArrayList<Atraccion> listAtracciones, ArrayList<Persona> listPersonas) {
         this.nit = nit;
@@ -19,6 +29,19 @@ public class ParqueAtracciones {
         this.direccion = direccion;
         listAtracciones = new ArrayList<>();
         listPersonas = new ArrayList<>();
+    }
+
+    public boolean validarAforoMaximoParque(){
+        boolean bandera=true;
+            if(listVisitante.size()>=capacidadMaxima){
+                bandera= false;
+            }
+            return bandera;
+    }
+
+
+    public boolean validarAforoMaximoZonaParque(){
+
     }
 
     public String getNombre() {
@@ -68,5 +91,21 @@ public class ParqueAtracciones {
 
     public void setListPersonas(ArrayList<Persona> listPersonas) {
         this.listPersonas = listPersonas;
+    }
+
+    public int getCapacidadMaxima() {
+        return capacidadMaxima;
+    }
+
+    public void setCapacidadMaxima(int capacidadMaxima) {
+        this.capacidadMaxima = capacidadMaxima;
+    }
+
+    public ArrayList<Visitante> getListVisitante() {
+        return listVisitante;
+    }
+
+    public void setListVisitante(ArrayList<Visitante> listVisitante) {
+        this.listVisitante = listVisitante;
     }
 }

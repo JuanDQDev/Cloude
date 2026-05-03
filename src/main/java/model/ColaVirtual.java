@@ -12,11 +12,10 @@ public class ColaVirtual {
     private Atraccion theAtraccion;
 
 
-
     public boolean validarEdadMinima(Visitante visitante){
         boolean bandera=true;
 
-        if(visitante.getEdad()< theAtraccion.getEdadMinima()){
+        if(visitante.getEdad()>0&&visitante.getEdad()< theAtraccion.getEdadMinima()){
             bandera=false;
         }
         return bandera;
@@ -25,24 +24,20 @@ public class ColaVirtual {
     public boolean validarEstaturaMinima(Visitante visitante){
         boolean bandera=true;
 
-        if(visitante.getEstatura()<theAtraccion.getAlturaMinima()){
+        if(visitante.getEstatura()>0&&visitante.getEstatura()>theAtraccion.getAlturaMinima()){
             bandera=false;
         }
         return bandera;
     }
-    public boolean agregarVisitantesFastPass(Visitante visitante){
-        boolean bandera=false;
-        if(visitante.getEntrada()== TipoEntrada.FAST_PASS){
-            bandera=true;
-            ListaVisitantesFastPass.add(visitante);
-        }
-        return bandera;
-    }
-
-    public void agregarVisitantesCorriente(Visitante visitante){
+    public void agregarVisitantes(Visitante visitante){
         if(validarEdadMinima(visitante)&&validarEstaturaMinima(visitante)){
-            listaVisitantes.add(visitante);
+            if(visitante.getEntrada()== TipoEntrada.FAST_PASS){
+                ListaVisitantesFastPass.add(visitante);
+            }else {
+                listaVisitantes.add(visitante);
+            }
         }
+
     }
 
     public ColaVirtual(int id, ArrayList<Visitante> listaVisitantes, Atraccion theAtraccion, ArrayList<Visitante> listaVisitantesFastPass) {
