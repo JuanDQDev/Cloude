@@ -1,8 +1,10 @@
 package model;
 
+import javafx.event.ActionEvent;
+
 import java.util.ArrayList;
 
-public class Atraccion {
+public class Atraccion extends ActionEvent {
 
     private String id;
     private String nombre;
@@ -11,12 +13,13 @@ public class Atraccion {
     private int edadMinima;
     private int tiempoEspera;
     private double costoAdicional;
+    private String imagen;
 
     //relaciones
     private ArrayList<Operador> listOperadores;
     private ArrayList<Visitante> listVisitantes;
 
-    public Atraccion(String id, String nombre, int capacidadCiclo, double alturaMinima, int edadMinima, int tiempoEspera, double costoAdicional, ArrayList<Operador> listOperadores, ArrayList<Visitante> listVisitantes) {
+    public Atraccion(String id, String nombre, int capacidadCiclo, double alturaMinima, int edadMinima, int tiempoEspera, double costoAdicional,String imagen) {
         this.id = id;
         this.nombre = nombre;
         this.capacidadCiclo = capacidadCiclo;
@@ -24,6 +27,7 @@ public class Atraccion {
         this.edadMinima = edadMinima;
         this.tiempoEspera = tiempoEspera;
         this.costoAdicional = costoAdicional;
+        this.imagen=imagen;
         listOperadores = new ArrayList<>();
         listVisitantes = new ArrayList<>();
     }
@@ -92,6 +96,14 @@ public class Atraccion {
         this.costoAdicional = costoAdicional;
     }
 
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
     public ArrayList<Visitante> getListVisitantes() {
         return listVisitantes;
     }
@@ -108,6 +120,8 @@ public class Atraccion {
                 ", capacidadCiclo=" + capacidadCiclo +
                 ", alturaMinima=" + alturaMinima +
                 ", tiempoEspera=" + tiempoEspera +
+                ", costoAdicional=" +costoAdicional+
+                ", imagen='" + imagen + '\'' +
                 '}';
     }
 }

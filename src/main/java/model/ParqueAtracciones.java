@@ -1,16 +1,11 @@
 package model;
 
 import application.App;
-import controllers.MainMenuController;
-import controllers.RegisterMenuController;
 import controllers.SceneController;
 import javafx.geometry.Pos;
 import javafx.util.Duration;
 import model.enums.TipoNotificaciones;
 import org.controlsfx.control.Notifications;
-
-import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
 
 import javafx.event.ActionEvent;
 import utilities.Paths;
@@ -25,7 +20,7 @@ public class ParqueAtracciones {
      ArrayList<Visitante> visitantes = App.visitantes;
 
 
-    public void registrarVisitante(String usuario, String telefono, String cedula, String estatura, ActionEvent event) throws IOException {
+    public boolean registrarVisitante(String usuario, String telefono, String cedula, String estatura, ActionEvent event) throws IOException {
         Visitante visitante = new Visitante(usuario, telefono, cedula, estatura);
 
         if (cedula.isEmpty() || telefono.isEmpty() || usuario.isEmpty() || estatura.isEmpty()) {
@@ -45,6 +40,7 @@ public class ParqueAtracciones {
             System.out.println(visitantes);
         }
 
+        return false;
     }
 
     public void loginVisitante(String usuario, String cedula, ActionEvent event) throws IOException {

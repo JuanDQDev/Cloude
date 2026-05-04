@@ -10,9 +10,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="695.0" prefWidth="1059.0" styleClass="general-background" stylesheets="@css/registerMenu.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RegisterMenuController">
    <children>
-      <AnchorPane layoutX="206.0" layoutY="19.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="668.0" styleClass="menu-pane">
+      <AnchorPane layoutX="214.0" layoutY="19.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="668.0" styleClass="menu-pane">
          <children>
-            <ImageView fitHeight="428.0" fitWidth="272.0" layoutX="204.0" layoutY="-76.0" pickOnBounds="true" preserveRatio="true" styleClass="image-stroke">
+            <ImageView fitHeight="428.0" fitWidth="272.0" layoutX="379.0" layoutY="-56.0" pickOnBounds="true" preserveRatio="true" styleClass="image-stroke">
                <image>
                   <Image url="@images/QuindioAventura.png" />
                </image>
@@ -47,26 +47,21 @@
                   <Font size="22.0" />
                </font>
             </Text>
-            <Button layoutX="392.0" layoutY="483.0" mnemonicParsing="false" onAction="#onActionRegistrarse" prefHeight="45.0" prefWidth="230.0" styleClass="button-menu" text="Registrarse">
+            <Button layoutX="387.0" layoutY="483.0" mnemonicParsing="false" onAction="#onActionRegistrarse" prefHeight="89.0" prefWidth="260.0" styleClass="button-menu" text="Registrarse">
                <font>
-                  <Font size="24.0" />
+                  <Font size="35.0" />
                </font>
             </Button>
-            <Text layoutX="349.0" layoutY="420.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="login-text" text="Ingrese sus datos" wrappingWidth="307.66790168275486">
+            <Text layoutX="41.0" layoutY="152.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="login-text" text="Ingrese sus datos" wrappingWidth="307.66790168275486">
                <font>
                   <Font name="Beirut Regular" size="36.0" />
                </font>
             </Text>
-            <Text layoutX="343.0" layoutY="455.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="login-text" text="para ingresar al sistema" wrappingWidth="311.9085101572664">
+            <Text layoutX="39.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="login-text" text="para ingresar al sistema" wrappingWidth="311.9085101572664">
                <font>
                   <Font name="Farah Regular" size="28.0" />
                </font>
             </Text>
-            <Button layoutX="198.0" layoutY="583.0" mnemonicParsing="false" onAction="#onActionVolverMenu" prefHeight="45.0" prefWidth="306.0" styleClass="button-menu" text="Volver al menu principal">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Button>
             <TextField fx:id="estaturatxtfield" layoutX="353.0" layoutY="338.0" prefHeight="29.0" prefWidth="298.0" promptText="Ingrese su estatura (cm)" scaleShape="false" styleClass="textfields" stylesheets="@css/login.css">
                <font>
                   <Font size="26.0" />
@@ -77,6 +72,13 @@
                   <Font size="22.0" />
                </font>
             </Text>
+            <Button layoutX="26.0" layoutY="25.0" mnemonicParsing="false" onAction="#onActionVolverMenu" prefHeight="74.0" prefWidth="67.0" styleClass="button-menu">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+
+
          </children>
       </AnchorPane>
    </children>
