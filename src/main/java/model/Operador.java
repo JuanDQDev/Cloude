@@ -9,6 +9,10 @@ public class Operador extends Persona{
         this.sueldo = sueldo;
     }
 
+    public Operador(String nombre, String identificacion) {
+        super(nombre, identificacion);
+    }
+
     public double getSueldo() {
         return sueldo;
     }

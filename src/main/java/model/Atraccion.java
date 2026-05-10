@@ -17,8 +17,9 @@ public class Atraccion {
     //relaciones
     private ArrayList<Operador> listOperadores;
     private ColaVirtual theColaVirtual;
+    private TipoEntrada entrada;
 
-    public Atraccion(String id, String nombre, int capacidadCiclo, double alturaMinima, int edadMinima, int tiempoEspera, double costoAdicional, ArrayList<Operador> listOperadores, ColaVirtual theColaVirtual) {
+    public Atraccion(String id, String nombre, int capacidadCiclo, double alturaMinima, int edadMinima, int tiempoEspera, double costoAdicional, ArrayList<Operador> listOperadores, ColaVirtual theColaVirtual, TipoEntrada entrada) {
         this.id = id;
         this.nombre = nombre;
         this.capacidadCiclo = capacidadCiclo;
@@ -26,8 +27,9 @@ public class Atraccion {
         this.edadMinima = edadMinima;
         this.tiempoEspera = tiempoEspera;
         this.costoAdicional = costoAdicional;
-        listOperadores = new ArrayList<>();
-        this.theColaVirtual=theColaVirtual;
+        this.listOperadores = listOperadores;
+        this.theColaVirtual = theColaVirtual;
+        this.entrada = entrada;
     }
 
     public boolean validarEdadMinima(Visitante visitante){
@@ -118,6 +120,14 @@ public class Atraccion {
 
     public void setTheColaVirtual(ColaVirtual theColaVirtual) {
         this.theColaVirtual = theColaVirtual;
+    }
+
+    public TipoEntrada getEntrada() {
+        return entrada;
+    }
+
+    public void setEntrada(TipoEntrada entrada) {
+        this.entrada = entrada;
     }
 
     @Override
