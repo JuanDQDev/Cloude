@@ -1,5 +1,6 @@
 package model;
 
+import model.enums.EstadoAtraccion;
 import model.enums.TipoEntrada;
 
 import java.util.ArrayList;
@@ -30,7 +31,7 @@ public class ColaVirtual {
         return bandera;
     }
     public void agregarVisitantes(Visitante visitante){
-        if(validarEdadMinima(visitante)&&validarEstaturaMinima(visitante)){
+        if(validarEdadMinima(visitante)&&validarEstaturaMinima(visitante)&&theAtraccion.getEstadoAtraccin()== EstadoAtraccion.ACTIVA){
             if(visitante.getEntrada()== TipoEntrada.FAST_PASS){
                 ListaVisitantesFastPass.add(visitante);
             }else {

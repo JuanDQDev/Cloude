@@ -81,6 +81,47 @@ public class Administrador extends Persona implements IGestionanbleEmpleados {
             return mensaje;
         }
 
+        public boolean crearZonaAtraccion(ZonaAtraccion zona){
+
+        for(ZonaAtraccion zonaAsignar:listZonas){
+                if(zonaAsignar.getNumZona().equals(zona.getNumZona())){
+                    return false;
+                }
+            }
+            listZonas.add(zona);
+            return true;
+        }
+
+        public boolean actualizarZona(ZonaAtraccion zona, String numZona, String nombreZona, int maximoVisitantes){
+            for(ZonaAtraccion zonaAsignar:listZonas){
+                if(zonaAsignar.getNumZona().equals(zona.getNumZona())){
+                    zonaAsignar.setNumZona(numZona);
+                    zonaAsignar.setNombreZona(nombreZona);
+                    zonaAsignar.setMaximoVisitantes(maximoVisitantes);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public boolean eliminarZona(ZonaAtraccion zona){
+            for(int i=0;i<listZonas.size();i++){
+                if(listZonas.get(i).getNumZona().equals(zona.getNumZona())){
+                    listZonas.remove(i);
+                    return true;
+                }
+            }
+            return false;
+        }
+        public ZonaAtraccion mostrarZona(ZonaAtraccion zona) {
+            for (ZonaAtraccion zonaAsignar : listZonas) {
+                if (zonaAsignar.getNumZona().equals(zona.getNumZona())) {
+                    return zona;
+                }
+            }
+            return null;
+        }
+
 
         public double getSueldo () {
             return sueldo;

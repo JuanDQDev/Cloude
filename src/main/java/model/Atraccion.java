@@ -1,5 +1,6 @@
 package model;
 
+import model.enums.EstadoAtraccion;
 import model.enums.TipoEntrada;
 
 import java.util.ArrayList;
@@ -18,8 +19,9 @@ public class Atraccion {
     private ArrayList<Operador> listOperadores;
     private ColaVirtual theColaVirtual;
     private TipoEntrada entrada;
+    private EstadoAtraccion estadoAtraccion;
 
-    public Atraccion(String id, String nombre, int capacidadCiclo, double alturaMinima, int edadMinima, int tiempoEspera, double costoAdicional, ArrayList<Operador> listOperadores, ColaVirtual theColaVirtual, TipoEntrada entrada) {
+    public Atraccion(String id, String nombre, int capacidadCiclo, double alturaMinima, int edadMinima, int tiempoEspera, double costoAdicional, ArrayList<Operador> listOperadores, ColaVirtual theColaVirtual, TipoEntrada entrada, EstadoAtraccion estadoAtraccion) {
         this.id = id;
         this.nombre = nombre;
         this.capacidadCiclo = capacidadCiclo;
@@ -27,11 +29,11 @@ public class Atraccion {
         this.edadMinima = edadMinima;
         this.tiempoEspera = tiempoEspera;
         this.costoAdicional = costoAdicional;
-        this.listOperadores = listOperadores;
-        this.theColaVirtual = theColaVirtual;
         this.entrada = entrada;
+        this.estadoAtraccion=estadoAtraccion;
     }
 
+    //validar edad minima
     public boolean validarEdadMinima(Visitante visitante){
         boolean bandera=true;
 
@@ -41,6 +43,7 @@ public class Atraccion {
             return bandera;
     }
 
+    //validar estatura minima
     public boolean validarEstaturaMinima(Visitante visitante){
         boolean bandera=true;
 
@@ -48,6 +51,18 @@ public class Atraccion {
             bandera=false;
         }
         return bandera;
+    }
+
+    //asegurar minimo un operador por atraccion
+    public void validarAlMenosUnOperador(){
+        for(Atraccion theAtraccion:lis)
+        if(listOperadores.size()<0){
+            theAtr
+        }
+    }
+
+    public void establecerMantenimientoPreventivo() {
+        for()
     }
 
     public String getId() {
@@ -128,6 +143,14 @@ public class Atraccion {
 
     public void setEntrada(TipoEntrada entrada) {
         this.entrada = entrada;
+    }
+
+    public EstadoAtraccion getEstadoAtraccion() {
+        return estadoAtraccion;
+    }
+
+    public void setEstadoAtraccin(EstadoAtraccion estadoAtraccin) {
+        this.estadoAtraccion = estadoAtraccin;
     }
 
     @Override
