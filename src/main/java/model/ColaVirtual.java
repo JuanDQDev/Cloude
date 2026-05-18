@@ -5,6 +5,8 @@ import model.enums.TipoEntrada;
 
 import java.util.ArrayList;
 
+import static model.enums.TipoEntrada.GENERAL;
+
 public class ColaVirtual {
     private int id;
 
@@ -30,17 +32,29 @@ public class ColaVirtual {
         }
         return bandera;
     }
-    public void agregarVisitantes(Visitante visitante){
-        if(validarEdadMinima(visitante)&&validarEstaturaMinima(visitante)&&theAtraccion.getEstadoAtraccin()== EstadoAtraccion.ACTIVA){
-            if(visitante.getEntrada()== TipoEntrada.FAST_PASS){
-                ListaVisitantesFastPass.add(visitante);
-            }else {
-                listaVisitantes.add(visitante);
+
+    //validar entrada saldoVirtual
+    public boolean validarSaldoVirtual(Visitante visitante){
+        if(theAtraccion.getCostoAdicional()>0){
+            if(visitante.getEntrada()==GENERAL&&visitante.getSaldoVirtual()>theAtraccion.getCostoAdicional()){
+                visitante.setSaldoVirtual(visitante.getSaldoVirtual()-theAtraccion.getCostoAdicional());
+                return true;
             }
         }
-
+        return false;
     }
 
+    public void agregarVisitantes(Visitante visitante){
+        if(validarEdadMinima(visitante)&&validarEstaturaMinima(visitante)&&theAtraccion.getEstadoAtraccion()== EstadoAtraccion.ACTIVA){
+                if(visitante.getEntrada()== TipoEntrada.FAST_PASS){
+                    ListaVisitantesFastPass.add(visitante);
+                }else if(validarSaldoVirtual(visitante)) {
+                    listaVisitantes.add(visitante);
+                }else{
+                    listaVisitantes.add(visitante);
+                }
+        }
+    }
     public ColaVirtual(int id, ArrayList<Visitante> listaVisitantes, Atraccion theAtraccion, ArrayList<Visitante> listaVisitantesFastPass) {
         this.id = id;
         this.listaVisitantes = listaVisitantes;
@@ -52,12 +66,12 @@ public class ColaVirtual {
         this.listaVisitantes = listaVisitantes;
     }
 
-    public ArrayList<Visitante> getListaVisitantres() {
+    public ArrayList<Visitante> getListaVisitantes() {
         return listaVisitantes;
     }
 
-    public void setListaVisitantres(ArrayList<Visitante> listaVisitantres) {
-        this.listaVisitantes = listaVisitantres;
+    public void setListaVisitantes(ArrayList<Visitante> listaVisitantes) {
+        this.listaVisitantes = listaVisitantes;
     }
 
     public ArrayList<Visitante> getListaVisitantesFastPass() {

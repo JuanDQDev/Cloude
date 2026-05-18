@@ -1,5 +1,7 @@
 package model;
 
+import model.enums.EstadoAtraccion;
+
 import java.util.ArrayList;
 
 public class Administrador extends Persona implements IGestionanbleEmpleados {
@@ -121,6 +123,40 @@ public class Administrador extends Persona implements IGestionanbleEmpleados {
             }
             return null;
         }
+
+    //asegurar minimo un operador por atraccion
+    public void validarAlMenosUnOperador(){
+        for(Atraccion theAtraccion:listAtracciones) {
+            if (listOperadores.size() < 0) {
+                theAtraccion.setEstadoAtraccion(EstadoAtraccion.CERRADA);
+            }
+        }
+    }
+
+    public boolean validarMantenimientoPreventivo() {
+        boolean bandera=false;
+        for (Atraccion theAtraccion : listAtracciones) {
+            if (theAtraccion.getTheColaVirtual().getListaVisitantes().size() >= 500) {
+                theAtraccion.setEstadoAtraccion(EstadoAtraccion.EN_MANTENIMIENTO);
+                bandera=true;
+            }
+            bandera=false;
+        }
+        return bandera;
+    }
+
+
+    public boolean cambiarestadoMantenimiento() {
+        boolean bandera = false;
+        for (Atraccion theAtraccion : listAtracciones) {
+            if (theAtraccion.getEstadoAtraccion() == EstadoAtraccion.EN_MANTENIMIENTO) {
+                theAtraccion.getTheColaVirtual().getListaVisitantes().clear(); // vaciar cola
+                theAtraccion.setEstadoAtraccion(EstadoAtraccion.ACTIVA); // reactivar
+                bandera = true;
+            }
+        }
+        return bandera;
+    }
 
 
         public double getSueldo () {

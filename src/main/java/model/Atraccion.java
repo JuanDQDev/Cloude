@@ -53,13 +53,6 @@ public class Atraccion {
         return bandera;
     }
 
-    //asegurar minimo un operador por atraccion
-    public void validarAlMenosUnOperador(){
-        for(Atraccion theAtraccion:lis)
-        if(listOperadores.size()<0){
-            theAtr
-        }
-    }
 
     public void establecerMantenimientoPreventivo() {
         for()
@@ -149,8 +142,8 @@ public class Atraccion {
         return estadoAtraccion;
     }
 
-    public void setEstadoAtraccin(EstadoAtraccion estadoAtraccin) {
-        this.estadoAtraccion = estadoAtraccin;
+    public void setEstadoAtraccion(EstadoAtraccion estadoAtraccion) {
+        this.estadoAtraccion = estadoAtraccion;
     }
 
     @Override
