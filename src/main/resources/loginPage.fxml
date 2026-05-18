@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -16,11 +17,11 @@
                <font>
                   <Font size="33.0" />
                </font></TextField>
-            <TextField fx:id="passwtxtfield" layoutX="48.0" layoutY="457.0" prefHeight="48.0" prefWidth="390.0" promptText="Ingrese su contraseña" scaleShape="false" styleClass="textfields" stylesheets="@css/login.css">
+            <TextField fx:id="cedulatxtfield" layoutX="48.0" layoutY="457.0" prefHeight="48.0" prefWidth="390.0" promptText="Ingrese su cedula" scaleShape="false" styleClass="textfields" stylesheets="@css/login.css">
                <font>
                   <Font size="33.0" />
                </font></TextField>
-            <Button layoutX="113.0" layoutY="554.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="252.0" styleClass="buttons" stylesheets="@css/login.css" text="Ingresar">
+            <Button layoutX="113.0" layoutY="554.0" mnemonicParsing="false" onAction="#onActionIngresar" prefHeight="52.0" prefWidth="252.0" styleClass="button-menu" stylesheets="@css/registerMenu.css" text="Ingresar">
                <font>
                   <Font size="24.0" />
                </font></Button>
@@ -34,7 +35,7 @@
                   <Font size="28.0" />
                </font>
             </Text>
-            <Text layoutX="50.0" layoutY="455.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña">
+            <Text layoutX="50.0" layoutY="455.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cedula">
                <font>
                   <Font size="28.0" />
                </font>
@@ -56,15 +57,23 @@
             <Font name="Farah Regular" size="42.0" />
          </font>
       </Text>
-      <Text layoutX="8.0" layoutY="476.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="login-text" text="¿No te haz registrado?" wrappingWidth="670.7912921396883">
+      <Text layoutX="8.0" layoutY="471.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="login-text" text="¿No te haz registrado?" wrappingWidth="286.81903217587626">
          <font>
             <Font name="Farah Regular" size="28.0" />
          </font>
       </Text>
-      <Button layoutX="16.0" layoutY="498.0" mnemonicParsing="false" onAction="#onActionMenuPrincipal" prefHeight="52.0" prefWidth="252.0" styleClass="buttons" stylesheets="@css/login.css" text="Menu Principal">
+      <Button layoutX="16.0" layoutY="498.0" mnemonicParsing="false" onAction="#onActionRegistrarse" prefHeight="52.0" prefWidth="252.0" styleClass="button-menu" stylesheets="@css/registerMenu.css" text="Registrarse">
          <font>
             <Font size="24.0" />
          </font>
+      </Button>
+      <Button layoutX="35.0" layoutY="37.0" mnemonicParsing="false" onAction="#onActionMenuPrincipal" prefHeight="45.0" prefWidth="25.0" styleClass="button-menu" stylesheets="@css/registerMenu.css">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" />
+         </graphic>
       </Button>
    </children>
 </AnchorPane>

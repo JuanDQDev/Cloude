@@ -22,33 +22,4 @@ public class SceneController {
         stage.setScene(scene);
         stage.show();
     }
-
-/*  ELIMINAR
-    public void switchPrincipalPage(ActionEvent event) throws IOException {
-        AnchorPane root = FXMLLoader.load(getClass().getResource(Paths.MAIN_PAGE));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    public void switchRegisterPage(ActionEvent event) throws IOException {
-        AnchorPane root = FXMLLoader.load(getClass().getResource(Paths.REGISTER_PAGE));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-
-    }
-
-    public void switchLoginPage(ActionEvent event) throws IOException {
-        AnchorPane root = FXMLLoader.load(getClass().getResource(Paths.LOGIN_PAGE));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-
-    }
-
- */
 }

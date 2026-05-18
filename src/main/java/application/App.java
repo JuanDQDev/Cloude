@@ -34,6 +34,12 @@ public class App extends Application {
         stage.setScene(scene);
         stage.show();
 
+        Visitante persona = new Visitante("Juan Quitian", "1", "1", "1");
+        Visitante persona2 = new Visitante("oscar villegas", "1", "2", "1");
+        visitantes.add(persona);
+        visitantes.add(persona2);
+
+
     }
 
 

@@ -23,7 +23,13 @@
     -fx-text-fill: white;
     -fx-background-radius: 50px;
     -fx-cursor: hand;
+    -fx-display: flex;
+    transition: 0.3s;
 }
 .button-menu:hover{
-    -fx-background-color: #0F423D;
+    -fx-scale-x: 1.08;
+    -fx-scale-y: 1.08;
+    -fx-fill: white;
+    -fx-background-color: #2e403e;
+    -fx-text-fill: white;
 }

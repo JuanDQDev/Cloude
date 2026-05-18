@@ -26,11 +26,11 @@
                   <Font name="Beirut Regular" size="50.0" />
                </font>
             </Text>
-            <Button layoutX="65.0" layoutY="329.0" mnemonicParsing="false" onAction="#onActionRegistrarse" prefHeight="43.0" prefWidth="288.0" styleClass="button-menu" text="Registrarse">
+            <Button layoutX="65.0" layoutY="329.0" mnemonicParsing="false" onAction="#onActionRegistrarse" prefHeight="43.0" prefWidth="288.0" styleClass="button-menu" stylesheets="@css/registerMenu.css" text="Registrarse">
                <font>
                   <Font size="24.0" />
                </font></Button>
-            <Button layoutX="64.0" layoutY="384.0" mnemonicParsing="false" onAction="#btnIngresarOnAction" prefHeight="43.0" prefWidth="288.0" styleClass="button-menu" text="Ingresar">
+            <Button layoutX="64.0" layoutY="384.0" mnemonicParsing="false" onAction="#btnIngresarOnAction" prefHeight="43.0" prefWidth="288.0" styleClass="button-menu" stylesheets="@css/registerMenu.css" text="Ingresar">
                <font>
                   <Font size="24.0" />
                </font>
