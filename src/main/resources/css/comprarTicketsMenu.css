@@ -1,0 +1,127 @@
+.general-background{
+    -fx-background-color: #CFD4EA;
+}
+
+.root {
+    -fx-background-color: #f5f7f6;
+    -fx-font-family: "Inter";
+}
+
+/* TARJETAS GENERALES */
+.card {
+    -fx-background-color: #fafafa;
+    -fx-background-radius: 20;
+    -fx-padding: 25;
+    -fx-spacing: 10;
+
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 20, 0, 0, 8);
+    -fx-display: flex;
+    transition: 0.5s;
+}
+
+/* HOVER GENERAL */
+.card:hover {
+    -fx-translate-y: -8;
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(0,0,0,0.15),
+            30,
+            0,
+            0,
+            15
+    );
+
+}
+
+/* FAST PASS DESTACADO (GRADIENTE PRO) */
+.highlight {
+    -fx-background-color: linear-gradient(
+            to bottom right,
+            #b2e6dc 0%,
+            #dff7f2 30%,
+            #ffffff 90%
+    );
+
+    -fx-background-radius: 20;
+
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(26,188,156,0.35),
+            30,
+            0,
+            0,
+            12
+    );
+}
+
+/* HOVER ESPECIAL FAST PASS */
+.highlight:hover {
+    -fx-translate-y: -10;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(26,188,156,0.5),
+            40,
+            0,
+            0,
+            18
+    );
+}
+
+/* TITULOS */
+.title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+/* PRECIO */
+.price {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+/* ITEMS */
+.item {
+    -fx-text-fill: #555;
+    -fx-font-size: 13px;
+}
+
+/* BOTON PRINCIPAL */
+.btn-solid {
+    -fx-background-color: #1abc9c;
+    -fx-text-fill: white;
+    -fx-background-radius: 30;
+    transition: 0.3s;
+}
+
+/* HOVER BOTON PRINCIPAL */
+.btn-solid:hover {
+    -fx-background-color: #16a085;
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+/* BOTON OUTLINE */
+.btn-outline {
+    -fx-background-color: transparent;
+    -fx-border-color: #1abc9c;
+    -fx-text-fill: #1abc9c;
+    -fx-border-radius: 30px;
+    -fx-display: flex;
+    transition: 0.3s;
+}
+
+/* HOVER BOTON OUTLINE */
+.btn-outline:hover {
+    -fx-background-color: #1abc9c;
+    -fx-background-radius: 50px;
+    -fx-text-fill: white;
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}

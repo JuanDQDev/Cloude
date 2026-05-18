@@ -59,11 +59,10 @@ public class ParqueAtracciones {
                 if(visitante.getCedula().equals(cedula) && visitante.getNombre().equals(usuario)) {
                     sceneController.switchBetwenPages(event, Paths.MAIN_MENU);
                     createNotification(TipoNotificaciones.SUCCESS, "Inicion sesión", "Login exitoso.");
-                    break;
-                } else if (!visitante.getCedula().equals(cedula) || !visitante.getNombre().equals(usuario)) {
-                    createNotification(TipoNotificaciones.WARNING, "Inicio Sesión", "El usuario y la contraseña no coinciden");
+                    return;
                 }
             }
+            createNotification(TipoNotificaciones.WARNING, "Inicio Sesión", "El usuario y la contraseña no coinciden");
         }
     }
 
