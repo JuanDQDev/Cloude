@@ -13,41 +13,48 @@ import java.util.ArrayList;
 
 public class MainMenuController {
 
-    ArrayList<Visitante> visitantes = App.visitantes;
-    public int posicionLogueada;
-
     @FXML
     private Button btnMainMenu;
 
     @FXML
-    private Label labelusr;
+    public Text welcometxt;
 
     @FXML
-    private FontAwesomeIconView userIcon = new FontAwesomeIconView(FontAwesomeIcon.HOME);
-
-
+    private FontAwesomeIconView icon1 = new FontAwesomeIconView();
 
     @FXML
-    private Text profiletext;
+    private FontAwesomeIconView icon2 = new FontAwesomeIconView();
+
+    @FXML
+    private FontAwesomeIconView icon3 = new FontAwesomeIconView();
+
+    @FXML
+    private FontAwesomeIconView icon4 = new FontAwesomeIconView();
+
+    @FXML
+    private FontAwesomeIconView icon5  = new FontAwesomeIconView();
+
+    @FXML
+    public Text profiletext;
 
     @FXML
     public void initialize() {
-        LoginPageController loginPageController = new LoginPageController();
-
-        System.out.println(setProfileText(loginPageController.posicionLogueo));
-        System.out.println(visitantes.get(posicionLogueada).getNombre());
-        profiletext.setText(setProfileText(loginPageController.posicionLogueo));
-        cambiarColorBoton(userIcon, btnMainMenu);
+        cambiarColorBoton(icon1, btnMainMenu);
+        cambiarColorBoton(icon2, btnMainMenu);
+        cambiarColorBoton(icon3, btnMainMenu);
+        cambiarColorBoton(icon4, btnMainMenu);
+        cambiarColorBoton(icon5, btnMainMenu);
+        welcometxt.setText(welcometxt.getText() + "\n" + LoginPageController.loginName);
+        profiletext.setText(getProfileText(LoginPageController.loginName));
 
     }
 
-    public String setProfileText(int posicionLogueada) {
-            String name = visitantes.get(posicionLogueada).getNombre();
-            char charFirst = name.charAt(0);
+    public static String getProfileText(String loginName) {
+            char charFirst = loginName.charAt(0);
             char charSecond = ' ';
 
-            if (name.contains(" ")) {
-                String[] partes = name.split(" ");
+            if (loginName.contains(" ")) {
+                String[] partes = loginName.split(" ");
                 charSecond = partes[1].charAt(0);
             }
 
@@ -57,19 +64,9 @@ public class MainMenuController {
     }
 
     public void cambiarColorBoton(FontAwesomeIconView icon, Button boton) {
-        icon.getStyleClass().add("glyphicon");
-        boton.setGraphic(icon);
-        boton.getStyleClass().add("button-color");
+        icon.getStyleClass().add("glyphicon"); // le añade esta clase al icono
+        boton.setGraphic(icon); // Pone el icono dentro del boton
+        boton.getStyleClass().add("button-color"); // Finalmente le pone este estilo al boton y como el boton
+                                                    // esta con el icono los 2 quedan con el estilo
     }
-
-    public int buscarPosicionLogueada(String cedula) {
-        for(Visitante visitante : visitantes) {
-            if(visitante.getCedula().equals(cedula)) {
-                System.out.println(visitantes.indexOf(visitante));
-                return posicionLogueada = visitantes.indexOf(visitante);
-            }
-        }
-        return posicionLogueada = -1;
-    }
-
 }

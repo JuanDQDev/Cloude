@@ -19,18 +19,6 @@
     -fx-background-color: #F2F2F2;
 }
 
-.buttons{
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 0, 0);
-    -fx-background-color: #0B7E6F;
-    -fx-background-radius: 50px;
-    -fx-text-fill: white;
-    -fx-cursor: hand;
-}
-
-.buttons:hover{
-    -fx-background-color: #0F423D;
-}
-
 .general-background{
     -fx-background-color: linear-gradient(to top, #C1E1DC 0%, white 30%, #CFD4EA 140%);
 }
